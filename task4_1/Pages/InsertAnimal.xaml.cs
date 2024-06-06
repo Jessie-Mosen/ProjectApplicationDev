@@ -3,15 +3,12 @@ namespace task4_1.Pages;
 public partial class InsertAnimal : ContentPage
 {
     public MainViewModel vm;
-    
-    private Animal animal; // Declare the animal variable at the class level
-
+    private Animal animal; 
     public InsertAnimal(MainViewModel vm)
     {
         InitializeComponent();
         this.vm = vm;
         BindingContext = vm;
-    
     }
 
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
@@ -28,7 +25,7 @@ public partial class InsertAnimal : ContentPage
             milkLabel.IsVisible = true;
             woolEntry.IsVisible = false;
             woolLabel.IsVisible = false;
-            animal = new Cow(); // Initialize animal as Cow
+            animal = new Cow(); 
         }
         else if (selectedType == "Sheep")
         {
@@ -39,38 +36,33 @@ public partial class InsertAnimal : ContentPage
             woolLabel.IsVisible = true;
             milkEntry.IsVisible = false;
             milkLabel.IsVisible = false;
-            animal = new Sheep(); // Initialize animal as Sheep
+            animal = new Sheep(); 
         }
     }
 
     private void OnInsertAnimalClicked(object sender, EventArgs e)
     {
-        // Initialize milkAmount and woolAmount with default values
         double milkAmount = 0;
         double woolAmount = 0;
 
-        // Validate costEntry
         if (!double.TryParse(costEntry.Text, out double cost))
         {
             DisplayAlert("Error", "Cost must be a valid number", "OK");
             return;
         }
 
-        // Validate weightEntry
         if (!double.TryParse(weightEntry.Text, out double weight))
         {
             DisplayAlert("Error", "Weight must be a valid number", "OK");
             return;
         }
 
-        // Validate milkEntry (if visible)
         if (milkEntry.IsVisible && !double.TryParse(milkEntry.Text, out milkAmount))
         {
             DisplayAlert("Error", "Milk amount must be a valid number", "OK");
             return;
         }
 
-        // Validate woolEntry (if visible)
         if (woolEntry.IsVisible && !double.TryParse(woolEntry.Text, out woolAmount))
         {
             DisplayAlert("Error", "Wool amount must be a valid number", "OK");
