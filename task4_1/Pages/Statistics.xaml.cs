@@ -2,12 +2,8 @@ namespace task4_1.Pages;
 
 public partial class Statistics : ContentPage
 {
-    
-    
+       
     MainViewModel vm;
-    public double cowMilkPrice = 9.4; // $ per kg
-    public double sheepWoolPrice = 6.2; // $ per kg
-    public double governmentTaxRate = 0.02; // Government tax rate per kg per day
     public double totalWeight;
     public double GovernmentTaxDaily;
     public double avgweight;
@@ -24,8 +20,8 @@ public partial class Statistics : ContentPage
     private void CalulateStats(object sender, EventArgs e)
     {
         
-        totalWeight = vm.Animals.Sum(animal => animal.Weight);
-        GovernmentTaxDaily = governmentTaxRate * totalWeight;
+         double totalWeight = vm.Animals.Sum(animal => animal.Weight);
+        GovernmentTaxDaily = vm.governmentTaxRate * totalWeight;
         avgweight = totalWeight / vm.Animals.Count;
         countSheep = vm.Animals.Count(animal => animal is Sheep);
         countCow = vm.Animals.Count(animal => animal is Cow);
@@ -35,9 +31,9 @@ public partial class Statistics : ContentPage
         double totalIncome = vm.Animals.Sum(animal =>
         {
             if (animal is Cow cow)
-                return cow.Milk * cowMilkPrice;
+                return cow.Milk * vm.cowMilkPrice;
             else if (animal is Sheep sheep)
-                return sheep.Wool * sheepWoolPrice;
+                return sheep.Wool * vm.sheepWoolPrice;
             else
                 return 0;
         });
@@ -51,7 +47,7 @@ public partial class Statistics : ContentPage
         {
             if (animal is Cow cow)
             {
-                return (cow.Milk * cowMilkPrice)- cow.Cost - (cow.Milk * governmentTaxRate);
+                return (cow.Milk * vm.cowMilkPrice)- cow.Cost - (cow.Milk * vm.governmentTaxRate);
             }
             else return 0;
         }
@@ -64,7 +60,7 @@ public partial class Statistics : ContentPage
         {
             if (animal is Sheep sheep)
             {
-                return (sheep.Wool * sheepWoolPrice) - sheep.Cost - (sheep.Wool * governmentTaxRate);
+                return (sheep.Wool * vm.sheepWoolPrice) - sheep.Cost - (sheep.Wool * vm.governmentTaxRate);
             }
             else return 0;
         }

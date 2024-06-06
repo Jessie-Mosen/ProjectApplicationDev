@@ -2,8 +2,8 @@ namespace task4_1.Pages;
 
 public partial class DeleteAnimal : ContentPage
 {
-    MainViewModel vm;
-    
+    private readonly MainViewModel vm;
+
     public DeleteAnimal(MainViewModel vm)
     {
         InitializeComponent();
@@ -19,62 +19,40 @@ public partial class DeleteAnimal : ContentPage
 
     private void IdEntryBtn_click(object sender, EventArgs e)
     {
-        if (!int.TryParse(IdEntry.Text, out int animalId))
+        if (!TryGetAnimalById(out Animal animal))
         {
-            DisplayAlert("Error", "Invalid input", "OK");
+            ResultLabel.Text = "Animal not found";
             return;
         }
 
-        Animal animal = vm.Animals.FirstOrDefault(a => a.Id == animalId);
-
-        if (animal != null)
-        {
-            if (animal is Cow cow)
-            {
-                ResultLabel.Text =
-                    $"Type of Animal:       Cow\n" +
-                    $"Colour:       {cow.Colour}\n" +
-                    $"Cost:     {cow.Cost}\n" +
-                    $"Weight        {cow.Weight}\n" +
-                    $"Milk:     {cow.Milk}\n";
-                    
-            }
-            else if (animal is Sheep sheep)
-            {
-                ResultLabel.Text =
-                    $"Type of Animal:Sheep\n" +
-                    $"Colour:{sheep.Colour}\n" +
-                    $"Cost:{sheep.Cost}\n" +
-                    $"Weight:{sheep.Weight}\n" +
-                    $"Wool:{sheep.Wool}\n";
-            }
-        }
-        else
-        {
-            // If the animal with the provided ID is not found
-            ResultLabel.Text = "Animal not found";
-        }
+        ResultLabel.Text = animal is Cow cow
+            ? $"Type of Animal: Cow\nColour: {cow.Colour}\nCost: {cow.Cost}\nWeight: {cow.Weight}\nMilk: {cow.Milk}\n"
+            : $"Type of Animal: Sheep\nColour: {animal.Colour}\nCost: {animal.Cost}\nWeight: {animal.Weight}\nWool: {((Sheep)animal).Wool}\n";
     }
 
     private void DeleteBtn_Click(object sender, EventArgs e)
     {
-       
-        if (!int.TryParse(IdEntry.Text, out int animalId))
+        if (!TryGetAnimalById(out Animal animal))
         {
-            DisplayAlert("Error", "Invalid input", "OK");
+            DisplayAlert("Error", "No animal found", "OK");
             return;
         }
 
-        Animal animal = vm.Animals.FirstOrDefault(a => a.Id == animalId);
-        if(animal == null)
+        vm._database.DeleteItem(animal);
+        vm.Animals.Remove(animal);
+        DisplayAlert("Success", "Animal successfully deleted", "OK");
+    }
+
+    private bool TryGetAnimalById(out Animal animal)
+    {
+        animal = null;
+        if (!int.TryParse(IdEntry.Text, out int animalId))
         {
-            DisplayAlert("error", "no animal found", "OK");
+            DisplayAlert("Error", "Invalid input", "OK");
+            return false;
         }
-        if (animal != null)
-        {
-            vm._database.DeleteItem(animal);
-            vm.Animals.Remove(animal);
-            DisplayAlert("congrats", "Successful Deletion", "OK");
-        }
+
+        animal = vm.Animals.FirstOrDefault(a => a.Id == animalId);
+        return animal != null;
     }
 }

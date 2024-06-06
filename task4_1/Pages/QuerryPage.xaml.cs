@@ -120,7 +120,7 @@ public partial class QuerryPage : ContentPage
         return animal.Weight; 
     }
 
-    private double CalculateProduceAmount(Animal animal)
+    private static double CalculateProduceAmount(Animal animal)
     {
 
         
