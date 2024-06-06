@@ -14,7 +14,7 @@ public partial class QuerryPage : ContentPage
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
     {
         string selectedType = typePicker.SelectedItem.ToString();
-        //typePicker.SelectedIndex = 0;
+       
         colourPicker.SelectedIndex = 0;
 
         
