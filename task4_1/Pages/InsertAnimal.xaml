@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="task4_1.Pages.InsertAnimal"
+             Title="InsertAnimal">
+    <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="450"/>
+            </Style>
+        </Grid.Resources>
+
+        <Button Text="Insert Animal" Clicked="OnInsertAnimalClicked" Grid.Row="1" Grid.Column="3"/>
+        <Button Text="reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="3"/>
+
+        <Label Text="Select Livestock Type:"  Grid.Column="0" Grid.Row="0"/>
+        <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
+                Grid.Column="1" Grid.Row="0">
+            <Picker.Items>
+                <x:String>Cow</x:String>
+                <x:String>Sheep</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Select Colour:" Grid.Column="0" Grid.Row="1"/>
+        <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1">
+            <Picker.Items>
+                
+                <x:String>Black</x:String>
+                <x:String>White</x:String>
+                <x:String>Red</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Weight (kg):" Grid.Row="2" Grid.Column="0"/>
+        <Entry x:Name="weightEntry" Placeholder="Enter weight" Grid.Row="2" Grid.Column="1"/>
+
+        <!-- Cost input -->
+        <Label Text="Cost ($):" Grid.Row="3" Grid.Column="0"/>
+        <Entry x:Name="costEntry" Placeholder="Enter cost" Grid.Row="3" Grid.Column="1"/>
+
+        <!-- Milk input -->
+        <Label Text="Milk (kg):" Grid.Row="4" Grid.Column="0" IsVisible="False" x:Name="milkLabel"/>
+        <Entry x:Name="milkEntry" Placeholder="Enter milk amount" Grid.Row="4" Grid.Column="1" IsVisible="False"/>
+
+        <!-- Wool input -->
+        <Label Text="Wool (kg):" Grid.Row="4" Grid.Column="0" IsVisible="False" x:Name="woolLabel"/>
+        <Entry x:Name="woolEntry" Placeholder="Enter wool amount" Grid.Row="4" Grid.Column="1" IsVisible="False"/>
+
+        <!-- Button to insert the animal -->
+        <Button Text="Insert Animal" Clicked="OnInsertAnimalClicked" Grid.Row="5" Grid.Column="1"/>
+
+
+
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="task4_1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:task4_1"
+    xmlns:Pages="clr-namespace:task4_1.Pages"
+    xmlns:ViewModels="clr-namespace:task4_1.ViewModels"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Data Listing" Icon="hurricanealt.svg" >
+            <ShellContent ContentTemplate="{DataTemplate Pages:DataPage} "/>
+        </Tab>
+        <Tab Title="Statistics" Icon="sundust.svg">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Statistics}"/>
+        </Tab>
+        <Tab Title="Querry Page" Icon="sundust.svg">
+            <ShellContent ContentTemplate="{DataTemplate Pages:QuerryPage}"/>
+        </Tab>
+        <Tab Title="Insert Animal" Icon="sundust.svg">
+            <ShellContent ContentTemplate="{DataTemplate Pages:InsertAnimal}"/>
+        </Tab>
+        <Tab Title="Delete Animal" Icon="sundust.svg">
+                    <ShellContent ContentTemplate="{DataTemplate Pages:DeleteAnimal}"/>
+                </Tab>
+        <Tab Title="Update Animal" Icon="sundust.svg">
+                    <ShellContent ContentTemplate="{DataTemplate Pages:UpdateAnimal}"/>
+                </Tab>
+
+    </TabBar>
+    
+</Shell>

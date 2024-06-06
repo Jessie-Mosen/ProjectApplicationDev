@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Models="clr-namespace:task4_1.Models"
+             xmlns:ViewModels="clr-namespace:task4_1.ViewModels"
+             x:Class="task4_1.Pages.DataPage"
+             Title="DataPage">
+
+    <Border Margin="40,40" BackgroundColor="PeachPuff" StrokeShape="RoundRectangle 10">
+
+        <CollectionView BackgroundColor="LightBlue"
+                        x:Name="AnimalCollView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border BackgroundColor="Grey" StrokeShape="RoundRectangle 10">
+                        <Grid ColumnDefinitions="*,*,*,*,*,*" >
+                            <Grid.Resources>
+                                <Style TargetType="Label">
+                                    <Setter Property="HorizontalOptions" Value="Center"/>
+                                </Style>
+                            </Grid.Resources>
+                            
+                            <Label Grid.Column="0" Text="{Binding Id}"/>
+                            <Label Grid.Column="1" Text="{Binding Colour}"/>
+                            <Label Grid.Column="2" Text="{Binding Cost}"/>
+                            <Label Grid.Column="3" Text="{Binding Weight}"/>
+                            <Label Grid.Column="4" Text="{Binding Milk}"/>
+                            <Label Grid.Column="5" Text="{Binding Wool}"/>
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Border>
+
+
+
+</ContentPage>
