@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:task4_1.Pages"
-             x:Class="task4_1.Pages.QueryPage"
-             Title="Query Page">
+             x:Class="task4_1.Pages.QuerryPage"
+             Title="Querry Page">
 
     <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
         <Grid.Resources>

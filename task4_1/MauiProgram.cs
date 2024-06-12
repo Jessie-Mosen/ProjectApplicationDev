@@ -23,7 +23,7 @@ public static class MauiProgram
         builder.Services.AddTransient<DataPage>();
 		builder.Services.AddTransient<Statistics>();
 		//builder.Services.AddTransient<InvestmentForecast>();
-		builder.Services.AddTransient<QueryPage>();
+		builder.Services.AddTransient<QuerryPage>();
 		builder.Services.AddTransient<InsertAnimal>();
 		builder.Services.AddTransient<DeleteAnimal>();
 		builder.Services.AddTransient<UpdateAnimal>();
