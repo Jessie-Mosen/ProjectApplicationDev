@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="task4_1.Pages.InsertAnimal"
              Title="InsertAnimal">
-    <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
+    <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*" >
         <Grid.Resources>
             <Style TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="FontSize" Value="Small"/>
-                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="75"/>
                 <Setter Property="WidthRequest" Value="450"/>
             </Style>
         </Grid.Resources>
@@ -18,7 +18,7 @@
 
         <Label Text="Select Livestock Type:"  Grid.Column="0" Grid.Row="0"/>
         <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
-                Grid.Column="1" Grid.Row="0">
+                Grid.Column="1" Grid.Row="0" >
             <Picker.Items>
                 <x:String>Cow</x:String>
                 <x:String>Sheep</x:String>
@@ -26,7 +26,7 @@
         </Picker>
 
         <Label Text="Select Colour:" Grid.Column="0" Grid.Row="1"/>
-        <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1">
+        <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1" >
             <Picker.Items>
                 
                 <x:String>Black</x:String>
