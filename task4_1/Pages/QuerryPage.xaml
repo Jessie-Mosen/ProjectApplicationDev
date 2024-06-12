@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:task4_1.Pages"
-             x:Class="task4_1.Pages.QuerryPage"
+             x:Class="task4_1.Pages.QueryPage"
              Title="Query Page">
 
     <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
@@ -15,9 +16,9 @@
         </Grid.Resources>
 
         <Button Text="Search" Clicked="OnSearchClicked" Grid.Row="0" Grid.Column="3"/>
-        <Button Text="reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="3"/>
-        
-        <Label Text="Select Livestock Type:"  Grid.Column="0" Grid.Row="0"/>
+        <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="3"/>
+
+        <Label Text="Select Livestock Type:" Grid.Column="0" Grid.Row="0"/>
         <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
                 Grid.Column="1" Grid.Row="0">
             <Picker.Items>
@@ -27,7 +28,6 @@
         </Picker>
 
         <Label Text="Select Colour:" Grid.Column="0" Grid.Row="1"/>
-        
         <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1">
             <Picker.Items>
                 <x:String>All</x:String>
@@ -36,27 +36,23 @@
                 <x:String>Red</x:String>
             </Picker.Items>
         </Picker>
-        <Label x:Name="label1" Text="number of livestock" Grid.Row="2" Grid.Column="0"/>
+
+        <Label x:Name="label1" Text="Number of Livestock:" Grid.Row="2" Grid.Column="0"/>
         <Label x:Name="totalCountLabel" Grid.Row="2" Grid.Column="1"/>
 
-        <Label Text="Percentage:" Grid.Row="3" Grid.Column="0"/>
+        <Label Text="Percentage of Selected Livestock:" Grid.Row="3" Grid.Column="0"/>
         <Label x:Name="percentageLabel" Grid.Row="3" Grid.Column="1"/>
 
-        <Label Text="Total Income:" Grid.Row="4" Grid.Column="0"/>
-        <Label x:Name="totalIncomeLabel" Grid.Row="4" Grid.Column="1"/>
+        <Label Text="Daily Tax of Selected Livestock:" Grid.Row="4" Grid.Column="0"/>
+        <Label x:Name="totalTaxLabel" Grid.Row="4" Grid.Column="1"/>
 
-        <Label Text="Total Cost:" Grid.Row="5" Grid.Column="0"/>
-        <Label x:Name="totalCostLabel" Grid.Row="5" Grid.Column="1"/>
+        <Label Text="Daily Profit of Selected Livestock:" Grid.Row="5" Grid.Column="0"/>
+        <Label x:Name="profitLabel" Grid.Row="5" Grid.Column="1"/>
 
-        <Label Text="Total Tax:" Grid.Row="6" Grid.Column="0"/>
-        <Label x:Name="totalTaxLabel" Grid.Row="6" Grid.Column="1"/>
+        <Label Text="Average Weight:" Grid.Row="6" Grid.Column="0"/>
+        <Label x:Name="averageWeightLabel" Grid.Row="6" Grid.Column="1"/>
 
-        <Label Text="Average Weight:" Grid.Row="7" Grid.Column="0"/>
-        <Label x:Name="averageWeightLabel" Grid.Row="7" Grid.Column="1"/>
-
-        <Label Text="Total Produce Amount per Day:" Grid.Row="8" Grid.Column="0"/>
-        <Label x:Name="totalProduceAmountLabel" Grid.Row="8" Grid.Column="1"/>
-
+        <Label Text="Total Produce Amount per Day:" Grid.Row="7" Grid.Column="0"/>
+        <Label x:Name="totalProduceAmountLabel" Grid.Row="7" Grid.Column="1"/>
     </Grid>
-
 </ContentPage>
