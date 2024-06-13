@@ -3,41 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="task4_1.Pages.Statistics"
              Title="Statistics">
-    <Grid  Margin="0,30" ColumnDefinitions="*,*,*" ColumnSpacing="10" HorizontalOptions="Center"
-          RowDefinitions="*,*,*,*,*,*,*,*" RowSpacing="10"  VerticalOptions="Center">
-        
+    <VerticalStackLayout>
+        <!-- Statistics Section -->
+        <Grid Margin="0,10" ColumnDefinitions="2*,3*,*" ColumnSpacing="50" HorizontalOptions="Center"
+              RowDefinitions="*,*,*,*,*,*,*,*"  VerticalOptions="Center">
             <Grid.Resources>
                 <Style TargetType="Label">
                     <Setter Property="HorizontalOptions" Value="Center"/>
                     <Setter Property="FontSize" Value="Small"/>
-                    
-                    <Setter Property="WidthRequest" Value="450"/>
-                <Setter Property="FontSize" Value="Small"/>
-            </Style>
+                    <Setter Property="HeightRequest" Value="50"/>
+                    <Setter Property="WidthRequest" Value="350"/>
+                </Style>
             </Grid.Resources>
 
-        <Button Grid.Column="3" Grid.Row="1" Clicked="CalulateStats" Text="CalculateStats"/>
-        <Button Text="reset" Clicked="OnResetClicked"  Grid.Row="2" Grid.Column="3"/>
+            <Button Grid.Column="2" Grid.Row="0" Clicked="CalulateStats" Text="Calculate Stats"/>
+            <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="2"/>
 
-        <Label Text="Government Tax for 30 Days" Grid.Row="0" Grid.Column="0"/>
-        <Label Text="Farm Daily Profit" Grid.Row="1" Grid.Column="0"/>
-        <Label Text="Average Weight of livestock" Grid.Row="2" Grid.Column="0"/>
-       
-        <Label x:Name="govttax" Grid.Row="0" Grid.Column="1"/>
-        <Label x:Name="farmdailyprofit" Grid.Row="1" Grid.Column="1"/>
-        <Label x:Name="averageweight" Grid.Row="2" Grid.Column="1"/>
-        
-        <Label Text="Based on current livestock data" Grid.Row="3" Grid.Column="0" FontSize="Small" FontAttributes="Italic" />
-        <Label Text="on average, a single cow makes daily profit:" Grid.Row="4" Grid.Column="0"/>
-        <Label Text="on average, a single Sheep makes daily profit:" Grid.Row="5" Grid.Column="0"/>
-        <Label Text="current daily profit of all cows is:" Grid.Row="6" Grid.Column="0"/>
-        <Label Text="current daily profit of all sheep is:" Grid.Row="7" Grid.Column="0"/>
+            <Label Text="Government Tax for 30 Days" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="Farm Daily Profit" Grid.Row="1" Grid.Column="0"/>
+            <Label Text="Average Weight of livestock" Grid.Row="2" Grid.Column="0"/>
 
-        <Label x:Name="avgcowdailyprft"  Grid.Row="4" Grid.Column="1"/>
-        <Label x:Name="avgsheepdailyprft" Grid.Row="5" Grid.Column="1"/>
-        <Label x:Name="cowdailyprft" Grid.Row="6" Grid.Column="1"/>
-        <Label x:Name="sheepdailyprft" Grid.Row="7" Grid.Column="1"/>
-        
-    </Grid>
+            <Label x:Name="govttax" Grid.Row="0" Grid.Column="1"/>
+            <Label x:Name="farmdailyprofit" Grid.Row="1" Grid.Column="1"/>
+            <Label x:Name="averageweight" Grid.Row="2" Grid.Column="1"/>
 
+            <Label Text="Based on current livestock data" Grid.Row="3" Grid.Column="0" FontSize="Small" FontAttributes="Italic" />
+            <Label Text="on average, a single cow makes daily profit:" Grid.Row="4" Grid.Column="0"/>
+            <Label Text="on average, a single Sheep makes daily profit:" Grid.Row="5" Grid.Column="0"/>
+            <Label Text="current daily profit of all cows is:" Grid.Row="6" Grid.Column="0"/>
+            <Label Text="current daily profit of all sheep is:" Grid.Row="7" Grid.Column="0"/>
+
+            <Label x:Name="avgcowdailyprft"  Grid.Row="4" Grid.Column="1"/>
+            <Label x:Name="avgsheepdailyprft" Grid.Row="5" Grid.Column="1"/>
+            <Label x:Name="cowdailyprft" Grid.Row="6" Grid.Column="1"/>
+            <Label x:Name="sheepdailyprft" Grid.Row="7" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Investment Forecast Section -->
+        <Grid Margin="0,10" ColumnDefinitions="2*,*,*" ColumnSpacing="50" HorizontalOptions="Center"
+              RowDefinitions="*,*"  VerticalOptions="Center">
+            <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
+                    Grid.Column="0" Grid.Row="0">
+                <Picker.Items>
+                    <x:String>Cow</x:String>
+                    <x:String>Sheep</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry x:Name="IDAnimalAmount" Placeholder="Entry Animal Amount: " Grid.Row="1" Grid.Column="0"/>
+
+            <Button Grid.Column="2" Grid.Row="0" Clicked="IDAnimalBtn_click" Text="Calculate investment forecast"/>
+
+            <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="PeachPuff" TextColor="Black" Text="result here::::"/>
+
+            <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="2" />
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>
