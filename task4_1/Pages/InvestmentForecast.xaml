@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="task4_1.Pages.InvestmentForecast"
+             Title="InvestmentForecast">
+    <VerticalStackLayout>
+        <Grid Margin="0,30" ColumnDefinitions="250,400,*" ColumnSpacing="50" HorizontalOptions="Center"
+      RowDefinitions="*,*,*" RowSpacing="25" VerticalOptions="Center">
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="FontSize" Value="Small"/>
+                    <Setter Property="HeightRequest" Value="100"/>
+                    <Setter Property="WidthRequest" Value="350"/>
+                </Style>
+            </Grid.Resources>
+            <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
+         Grid.Column="0" Grid.Row="0">
+                <Picker.Items>
+                    <x:String>Cow</x:String>
+                    <x:String>Sheep</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry x:Name="IDAnimalAmount" Placeholder="Entry Animal Amount: " Grid.Row="1" Grid.Column="0"/>
+
+            <Button Grid.Column="2" Grid.Row="0" Clicked="IDAnimalBtn_click" Text="Calculate"/>
+
+
+            <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1"
+           BackgroundColor="PeachPuff" TextColor="Black" Text="result here::::"/>
+
+            <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="2" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

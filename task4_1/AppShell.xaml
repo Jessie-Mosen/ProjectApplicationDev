@@ -15,6 +15,10 @@
         <Tab Title="Statistics" Icon="sundust.svg">
             <ShellContent ContentTemplate="{DataTemplate Pages:Statistics}"/>
         </Tab>
+        <Tab Title="Investment Forecast" Icon="sundust.svg">
+            <ShellContent ContentTemplate="{DataTemplate Pages:InvestmentForecast}"/>
+        </Tab>
+
         <Tab Title="Querry Page" Icon="sundust.svg">
             <ShellContent ContentTemplate="{DataTemplate Pages:QuerryPage}"/>
         </Tab>
