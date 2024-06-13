@@ -13,20 +13,20 @@
         <StackLayout Grid.Column="0" Spacing="5">
             <Label Text="Statistics" FontSize="Large" HorizontalOptions="Center"/>
             <Label Text="Government Tax for 30 Days"/>
-            <Label x:Name="govttax" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="govttax" />
             <Label Text="Farm Daily Profit"/>
-            <Label x:Name="farmdailyprofit" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="farmdailyprofit"/>
             <Label Text="Average Weight of Livestock"/>
-            <Label x:Name="averageweight" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="averageweight"/>
             <Label Text="Based on current livestock data" FontAttributes="Italic"/>
             <Label Text="On average, a single cow makes daily profit:"/>
-            <Label x:Name="avgcowdailyprft" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="avgcowdailyprft"/>
             <Label Text="On average, a single Sheep makes daily profit:"/>
-            <Label x:Name="avgsheepdailyprft" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="avgsheepdailyprft"/>
             <Label Text="Current daily profit of all cows is:"/>
-            <Label x:Name="cowdailyprft" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="cowdailyprft" />
             <Label Text="Current daily profit of all sheep is:"/>
-            <Label x:Name="sheepdailyprft" BackgroundColor="PeachPuff" TextColor="Black"/>
+            <Label x:Name="sheepdailyprft"/>
             <Button Clicked="CalulateStats" Text="Calculate Stats" HorizontalOptions="Center"/>
             <Button Clicked="OnResetClicked" Text="Reset" HorizontalOptions="Center"/>
         </StackLayout>
