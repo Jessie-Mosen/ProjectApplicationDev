@@ -50,7 +50,7 @@ public partial class Statistics : ContentPage
 
         // Calculate and display investment forecast
         double investmentForecast = avgDailyProfit * animalAmount;
-        //InvestmentForecastLabel.Text = $"Investment Forecast: ${investmentForecast:F2}";
+        
     }
 
     private void OnResetClicked(object sender, EventArgs e)
