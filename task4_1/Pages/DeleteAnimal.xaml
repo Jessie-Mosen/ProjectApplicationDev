@@ -15,8 +15,7 @@
         </Grid.Resources>
         <Entry x:Name="IdEntry" Placeholder="Enter animal ID:" Grid.Row="0" Grid.Column="0"/>
         <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="SEARCH"/>
-        <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1" BackgroundColor="PeachPuff" TextColor="Black" 
-               Text="result here::::" FontSize="Small"/>
+        <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1" Text="result here::::" FontSize="Small"/>
         <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="1" />
         <Button Grid.Column="0" Grid.Row="2" Clicked="DeleteBtn_Click" Text="DELETE"/>
     </Grid>

@@ -99,13 +99,13 @@ public partial class InsertAnimal : ContentPage
         woolEntry.Text = string.Empty;
 
         // Reset pickers
-        typePicker.SelectedIndex = -1;
-        colourPicker.SelectedIndex = -1;
+        typePicker.SelectedIndex = 0;
+        colourPicker.SelectedIndex = 0;
 
         // Hide milk and wool entries and labels
-        milkEntry.IsVisible = false;
-        milkLabel.IsVisible = false;
-        woolEntry.IsVisible = false;
-        woolLabel.IsVisible = false;
+        //milkEntry.IsVisible = false;
+        //milkLabel.IsVisible = false;
+        //woolEntry.IsVisible = false;
+        //woolLabel.IsVisible = false;
     }
 }

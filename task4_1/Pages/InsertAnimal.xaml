@@ -37,20 +37,13 @@
 
         <Label Text="Weight (kg):" Grid.Row="2" Grid.Column="0"/>
         <Entry x:Name="weightEntry" Placeholder="Enter weight" Grid.Row="2" Grid.Column="1"/>
-
-        <!-- Cost input -->
         <Label Text="Cost ($):" Grid.Row="3" Grid.Column="0"/>
         <Entry x:Name="costEntry" Placeholder="Enter cost" Grid.Row="3" Grid.Column="1"/>
-
-        <!-- Milk input -->
         <Label Text="Milk (kg):" Grid.Row="4" Grid.Column="0" IsVisible="False" x:Name="milkLabel"/>
         <Entry x:Name="milkEntry" Placeholder="Enter milk amount" Grid.Row="4" Grid.Column="1" IsVisible="False"/>
-
-        <!-- Wool input -->
         <Label Text="Wool (kg):" Grid.Row="4" Grid.Column="0" IsVisible="False" x:Name="woolLabel"/>
         <Entry x:Name="woolEntry" Placeholder="Enter wool amount" Grid.Row="4" Grid.Column="1" IsVisible="False"/>
 
-        <!-- Button to insert the animal -->
         <Button Text="Insert Animal" Clicked="OnInsertAnimalClicked" Grid.Row="5" Grid.Column="1"/>
 
 

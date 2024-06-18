@@ -31,16 +31,14 @@ public partial class Statistics : ContentPage
         {
             avgDailyProfit = vm.AvgCowDailyProfit();
             double totalDailyProfit = avgDailyProfit * animalAmount;
-            ResultLabel.Text = $"Type of Animal: Cow\n" +
-                $"Average daily profit per Cow:: ${avgDailyProfit:F2}\n"
+            ResultLabel.Text = $"Average daily profit per Cow:: ${avgDailyProfit:F2}\n"
                +$"Total daily profit for {animalAmount} Cows:: ${totalDailyProfit:F2}";
         }
         else if (selectedType.Equals("Sheep", StringComparison.OrdinalIgnoreCase))
         {
             avgDailyProfit = vm.AvgSheepDailyProfit();
             double totalDailyProfit = avgDailyProfit * animalAmount;
-            ResultLabel.Text = $"Type of Animal: Sheep\n" +
-                $"Average daily profit per Sheep: ${avgDailyProfit:F2}\n" +
+            ResultLabel.Text = $"Average daily profit per Sheep: ${avgDailyProfit:F2}\n" +
                 $"Total daily profit for {animalAmount} Sheep: ${totalDailyProfit:F2}";
         }
         else
@@ -49,7 +47,7 @@ public partial class Statistics : ContentPage
         }
 
         // Calculate and display investment forecast
-        double investmentForecast = avgDailyProfit * animalAmount;
+        //double investmentForecast = avgDailyProfit * animalAmount;
         
     }
 

@@ -43,7 +43,7 @@
             </Picker>
 
             <Entry x:Name="IDAnimalAmount" Placeholder="Enter Animal Amount:"/>
-             <Label x:Name="ResultLabel" BackgroundColor="PeachPuff" TextColor="Black" Text="Result will be displayed here" HorizontalOptions="Center"/>
+             <Label x:Name="ResultLabel" Text="Result will be displayed here" HorizontalOptions="Center"/>
            
             <Button Clicked="IDAnimalBtn_click" Text="Calculate Forecast" HorizontalOptions="Center"/>
             <Button Clicked="OnResetClicked" Text="Reset" HorizontalOptions="Center"/>
