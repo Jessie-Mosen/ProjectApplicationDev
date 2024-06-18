@@ -26,7 +26,7 @@ public partial class Statistics : ContentPage
             return;
         }
 
-        double avgDailyProfit = 0;
+        double avgDailyProfit;
         if (selectedType.Equals("Cow", StringComparison.OrdinalIgnoreCase))
         {
             avgDailyProfit = vm.AvgCowDailyProfit();
@@ -71,8 +71,7 @@ public partial class Statistics : ContentPage
         averageweight.Text = $"{vm.CalculateAverageWeight():F2} kg";
     }
 
-    private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
-    {
-       // This method is intentionally left blank, can be used for future event handling
-    }
+
 }
+
+    
