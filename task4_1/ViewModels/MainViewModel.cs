@@ -10,11 +10,13 @@ public class MainViewModel
 
     public MainViewModel()
     {
-        _database = new Database(); // Assuming Database is your data access class
+        _database = new Database(); 
         Animals = new ObservableCollection<Animal>();
         _database.ReadItems().ForEach(x => Animals.Add(x));
     }
 
+    //helper methods
+    //universally available
     public double CalculateCowProfit(Cow cow)
     {
         double income = cow.Milk * cowMilkPrice;

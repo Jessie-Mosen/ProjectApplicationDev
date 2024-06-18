@@ -46,8 +46,6 @@ public partial class Statistics : ContentPage
             ResultLabel.Text = "Animal type not found";
         }
 
-        // Calculate and display investment forecast
-        //double investmentForecast = avgDailyProfit * animalAmount;
         
     }
 
@@ -55,12 +53,11 @@ public partial class Statistics : ContentPage
     {
         IDAnimalAmount.Text = string.Empty;
         ResultLabel.Text = string.Empty;
-        //InvestmentForecastLabel.Text = string.Empty;
+       
     }
 
     private void CalulateStats(object sender, EventArgs e)
     {
-        // Calculate and display farm statistics
         double avgCowDailyProfit = vm.AvgCowDailyProfit();
         double avgSheepDailyProfit = vm.AvgSheepDailyProfit();
         double avgDailyTax = vm.CalculateAvgGovernmentTax();
